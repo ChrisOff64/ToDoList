@@ -1,11 +1,12 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-import Navigation from "@navigation/Navigation";
-
-export default function App() {
-  return <Navigation />;
+export default function ToDoCreate() {
+  return (
+    <View style={styles.container}>
+      <Text>ToDoCreate Page</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
