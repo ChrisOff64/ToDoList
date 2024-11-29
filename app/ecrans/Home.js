@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View  } from "react-native";
+import Button from "@composants/UI/Button";
 
 export default function Home({ navigation }) {
   function gereOnPress() {
@@ -8,8 +9,7 @@ export default function Home({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text>Home Page</Text>
-      <Button onPress={gereOnPress} title="go" />
+      <Button onPress={gereOnPress}>Ajouter une tâche </Button>
     </View>
   );
 }
@@ -20,5 +20,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    padding:16
   },
 });
