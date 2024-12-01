@@ -1,10 +1,23 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import Input from "@composants/UI/Input";
+import Button from "@composants/UI/Button";
 
-export default function ToDoCreate() {
+import gereNouvelleTache from "@hooks/gereNouvelleTache";
+
+export default function ToDoCreate({ navigation }) {
+  const { tabChamps, gereValidation } = gereNouvelleTache();
+  function gereOnPress() {
+    navigation.navigate("Home");
+  }
+
   return (
     <View style={styles.container}>
-      <Text>ToDoCreate Page</Text>
+      {tabChamps.map(({ value, onChange, placeholder }) => {
+        return <Input key={placeholder} placeholder={placeholder} />;
+      })}
+
+      <Button onPress={gereValidation}>Ajouter une tache</Button>
     </View>
   );
 }
@@ -15,5 +28,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    padding: 16,
+    backgroundColor: "rgba(0,0,0,0.05)",
   },
 });
