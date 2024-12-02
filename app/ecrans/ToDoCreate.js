@@ -14,7 +14,14 @@ export default function ToDoCreate({ navigation }) {
   return (
     <View style={styles.container}>
       {tabChamps.map(({ value, onChange, placeholder }) => {
-        return <Input key={placeholder} placeholder={placeholder} />;
+        return (
+          <Input
+            key={placeholder}
+            placeholder={placeholder}
+            value={value}
+            onChange={onChange}
+          />
+        );
       })}
 
       <Button onPress={gereValidation}>Ajouter une tache</Button>

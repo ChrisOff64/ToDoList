@@ -1,4 +1,5 @@
 import React from "react";
+import gereASyncStorageCRUD from "./gereASyncStorageCRUD";
 
 export default function gereNouvelleTache() {
   const [titre, titreChange] = React.useState("");
