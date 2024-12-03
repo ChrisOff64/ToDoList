@@ -5,6 +5,8 @@ export default function gereNouvelleTache() {
   const [titre, titreChange] = React.useState("");
   const [description, descriptionChange] = React.useState("");
 
+  const {tacheAjoute}= gereASyncStorageCRUD();
+
   const tabChamps = [
     {
       value: titre,
@@ -22,6 +24,9 @@ export default function gereNouvelleTache() {
     if (titre.length === 0) {
       return alert("Le titre est obligatoire");
     }
+    await tacheAjoute({titre,description});
+    titreChange("");
+    descriptionChange("");
   }
 
   return { tabChamps, gereValidation };

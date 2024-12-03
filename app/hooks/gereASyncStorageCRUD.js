@@ -8,7 +8,7 @@ export default function gereASyncStorageCRUD() {
     AsyncStorage.getItem("listeTaches").then((listeTachesMemorisees) => {
       if (listeTachesMemorisees) {
         let ListeTraitee = JSON.parse(listeTachesMemorisees);
-        listeTachesChange(listeTachesMemorisees);
+        listeTachesChange(ListeTraitee);
       }
     });
   }, []);
@@ -22,7 +22,7 @@ export default function gereASyncStorageCRUD() {
 
   async function tacheModifie(index, tache) {
     const nouvelleListe = [...listeTaches];
-    nouvelleListe.splice(index, 1, tache);
+    nouvelleListe.splice(index, 1, tache);  
     const jsonValue = JSON.stringify(nouvelleListe);
     await AsyncStorage.setItem("listeTaches", jsonValue);
   }
@@ -35,4 +35,5 @@ export default function gereASyncStorageCRUD() {
   }
 
   return { listeTaches, tacheAjoute, tacheModifie, tacheSupprime };
+  
 }
