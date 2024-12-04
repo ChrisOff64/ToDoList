@@ -5,7 +5,7 @@ import Button from "@composants/UI/Button";
 
 import gereNouvelleTache from "@hooks/gereNouvelleTache";
 
-export default function ToDoCreate({ navigation }) {
+export default function TacheAjoute({ navigation }) {
   const { tabChamps, gereValidation } = gereNouvelleTache();
   function gereOnPress() {
     navigation.navigate("Home");
