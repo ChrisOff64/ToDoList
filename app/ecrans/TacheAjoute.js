@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Input from "@composants/UI/Input";
 import Button from "@composants/UI/Button";
-
+import Titre from "@composants/UI/Titre";
 import gereNouvelleTache from "@hooks/gereNouvelleTache";
 
 export default function TacheAjoute({ navigation }) {
@@ -13,6 +13,7 @@ export default function TacheAjoute({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Titre>Ajout d'une nouvelle tâche</Titre>
       {tabChamps.map(({ value, onChange, placeholder }) => {
         return (
           <Input
@@ -32,10 +33,9 @@ export default function TacheAjoute({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
     padding: 16,
-    backgroundColor: "rgba(0,0,0,0.05)",
+    backgroundColor: "#f7f3e9",
   },
 });

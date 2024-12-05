@@ -24,7 +24,7 @@ export default function gereNouvelleTache() {
     if (titre.length === 0) {
       return alert("Le titre est obligatoire");
     }
-    await tacheAjoute({titre,description});
+    await tacheAjoute({titre,description,coche:false});
     titreChange("");
     descriptionChange("");
   }
