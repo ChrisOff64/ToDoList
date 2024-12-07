@@ -18,20 +18,20 @@ export default function Home({ navigation }) {
     <ScrollView contentContainerStyle={styles.container}>
       <Titre>Mon App Tâches</Titre>
       {listeTaches.map(({ titre, description, coche }, index) => {
-        function gereDelete(){
+        function gereDelete() {
           tacheSupprime(index);
         }
-        function gereCocheChange(){
-          tacheModifie(index,{ titre, description, coche: !coche });
+        function gereCocheChange() {
+          tacheModifie(index, { titre, description, coche: !coche });
         }
         return (
           <FicheTache
-          key={index}
-          titre={titre}
-          description={description} 
-          coche={coche} 
-          gereDelete={gereDelete}
-          gereCocheChange={gereCocheChange}
+            key={index}
+            titre={titre}
+            description={description}
+            coche={coche}
+            gereDelete={gereDelete}
+            gereCocheChange={gereCocheChange}
           />
         );
       })}
@@ -42,7 +42,6 @@ export default function Home({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
